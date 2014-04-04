@@ -11,6 +11,10 @@
         Form1.Show()
         Form1.Label1.Text = "Deleting selected file(s), please wait."
         Form1.Timer1.Start()
+        Form1.ProgressBar1.Increment(Form1.ProgressBar1.Maximum)
+        If Form1.ProgressBar1.Maximum Then
+            MsgBox("Files deleted!", MsgBoxStyle.Information, "Files Deleted")
+        End If
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
